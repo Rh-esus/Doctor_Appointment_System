@@ -6,7 +6,7 @@ const AboutUs = () => {
     <>
       <Hero
         title={"Learn More About Us | NzCare Medical Institute"}
-        imageUrl={"/about.png"}
+        imageUrl={"/signin1.png"}
       />
       <Biography imageUrl={"/whoweare.png"} />
     </>

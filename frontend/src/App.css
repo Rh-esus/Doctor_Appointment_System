@@ -7,7 +7,7 @@
   font-family: "Montserrat", sans-serif;
 }
 body {
-  background: #e5e5e5;
+  background: #a7d9e2;
 }
 .btn {
   padding: 7px 20px;
@@ -21,7 +21,7 @@ body {
   color: #111;
 }
 .purple-btn {
-  background: #9083d5;
+  background: #2030a5;
   color: #fff;
 }
 p,
@@ -331,7 +331,7 @@ footer .content div ul {
   gap: 10px;
 }
 footer .content div ul a {
-  color: gray;
+  color: rgb(0, 0, 0);
   text-decoration: none;
 }
 footer .content div ul a:hover {
@@ -339,7 +339,7 @@ footer .content div ul a:hover {
   transition: 0.3s;
 }
 footer .content div ul li span {
-  color: gray;
+  color: rgb(25, 4, 87);
 }
 footer .content div ul li span:first-child {
   width: 150px;
@@ -462,7 +462,7 @@ nav .navLinks .links {
 }
 nav .navLinks .links a {
   text-decoration: none;
-  color: #222;
+  color: #2030a5;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 1.4px;
@@ -483,10 +483,10 @@ nav .btn {
   z-index: 2;
 }
 nav .logoutBtn {
-  background: linear-gradient(135deg, black, rgb(49, 49, 49));
+  background: linear-gradient(135deg, rgba(14, 39, 131, 0.385), rgb(49, 49, 49));
 }
 nav .loginBtn {
-  background: linear-gradient(135deg, black, rgb(49, 49, 49));
+  background: linear-gradient(135deg, rgb(5, 17, 250), rgb(49, 49, 49));
 }
 nav .hamburger {
   display: none;
