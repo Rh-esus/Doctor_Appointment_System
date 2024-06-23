@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Context } from '../main';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
@@ -12,10 +12,13 @@ const AddNewAdmin = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [nic, setNic] = useState("");
+  const [cin, setCin] = useState("");
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
   const [password, setPassword] = useState("");
+
+
+  const navigateTo=useNavigate();
 
 
   const handleAddNewAdmin = async (e) => {
@@ -23,8 +26,8 @@ const AddNewAdmin = () => {
     try {
       await axios
         .post(
-          "https://localhost:4000/api/v1/user/admin/addnew",
-          { firstName, lastName, email, phone, nic, dob, gender, password },
+          "http://localhost:4000/api/v1/user/admin/addnew",
+          { firstName, lastName, email, phone, cin, dob, gender, password },
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },
@@ -38,7 +41,7 @@ const AddNewAdmin = () => {
           setLastName("");
           setEmail("");
           setPhone("");
-          setNic("");
+          setCin("");
           setDob("");
           setGender("");
           setPassword("");
@@ -48,8 +51,10 @@ const AddNewAdmin = () => {
     }
   };
 
+  if (!isAuthenticated) {
+    return <Navigate to={"/login"} />;
+  }
 
-  const navigateTo=useNavigate();
 
   return (
     <>
@@ -89,9 +94,9 @@ const AddNewAdmin = () => {
               <div>
                 <input
                   type="number"
-                  placeholder="NIC"
-                  value={nic}
-                  onChange={(e) => setNic(e.target.value)}
+                  placeholder="CIN"
+                  value={cin}
+                  onChange={(e) => setCin(e.target.value)}
                 />
                 <input
                   type={"date"}

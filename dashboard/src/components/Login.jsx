@@ -20,7 +20,7 @@ const Login = () => {
       await axios
         .post(
           "http://localhost:4000/api/v1/user/login",
-          { email, password, confirmPassword, role: "Patient" },
+          { email, password, confirmPassword, role: "Admin" },
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },
@@ -78,4 +78,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;
