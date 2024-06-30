@@ -13,7 +13,7 @@ const Dashboard = () => {
     const fetchAppointments = async () => {
       try {
         const { data } = await axios.get(
-          "https://localhost:4000/api/v1/appointment/getall",
+          "http://localhost:4000/api/v1/appointment/getall",
           { withCredentials: true }
         );
         setAppointments(data.appointments);
@@ -27,7 +27,7 @@ const Dashboard = () => {
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       const { data } = await axios.put(
-        `https://localhost:4000/api/v1/appointment/update/${appointmentId}`,
+        `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
         { status },
         { withCredentials: true }
       );
@@ -59,14 +59,16 @@ const Dashboard = () => {
               <div>
                 <p>Hello ,</p>
                 <h5>
-                  {admin &&
-                    `${admin.firstName} ${admin.lastName}`}{" "}
+                  {admin ?
+                    `${admin.firstName} ${admin.lastName}` : "Admin"}
                 </h5>
               </div>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Facilis, nam molestias. Eaque molestiae ipsam commodi neque.
-                Assumenda repellendus necessitatibus itaque.
+              Welcome to the Doctor Appointment System Dashboard. Here, you can manage user accounts, appointments, and access reports. Feel free to explore the features and reach out if you need assistance.
+
+Thank you for your dedication.
+
+The Doctor Appointment System Team
               </p>
             </div>
           </div>
@@ -76,7 +78,7 @@ const Dashboard = () => {
           </div>
           <div className="thirdBox">
             <p>Registered Doctors</p>
-            <h3>10</h3>
+            <h3>3</h3>
           </div>
         </div>
         <div className="banner">

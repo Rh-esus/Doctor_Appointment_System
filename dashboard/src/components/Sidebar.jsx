@@ -59,16 +59,17 @@ const Sidebar = () => {
   return (
     <>
       
-    <nav style={isAuthenticated ?{display:"none"}:{display:"flex"}} className={show ? "show sidebar" : "sidebar"}>
-      <div className="links">
-        <TiHome onClick={gotoHome} />
-        <FaUserDoctor onClick={gotoDoctorsPage}/>
-        <MdAddModerator onClick={gotoAddNewAdmin}/>
-        <IoPersonAddSharp onClick={gotoAddNewDoctor}/>
-        <AiFillMessage onClick={gotoMessagePage}/>
-        <RiLogoutBoxFill onClick={handleLogout} />
-
-      </div>
+    <nav 
+      style={!isAuthenticated ? { display: "none" } : { display: "flex"}} 
+      className={show ? "show sidebar" : "sidebar"}>
+        <div className="links">
+          <TiHome onClick={gotoHome} />
+          <FaUserDoctor onClick={gotoDoctorsPage}/>
+          <MdAddModerator onClick={gotoAddNewAdmin}/>
+          <IoPersonAddSharp onClick={gotoAddNewDoctor}/>
+          <AiFillMessage onClick={gotoMessagePage}/>
+          <RiLogoutBoxFill onClick={handleLogout} />
+        </div>
 
 
     </nav>

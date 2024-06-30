@@ -66,7 +66,7 @@ const Departments = () => {
 
   return (
     <div className="container departments">
-      <h2>Departmenets</h2>
+      <h2>Departments</h2>
       <Carousel responsive={responsive} removeArrowOnDeviceType={["medium", "small"]}>
         {
           departmentsArray.map((depart, index)=>{

@@ -11,7 +11,7 @@ const Doctors = () => {
     const fetchDoctors = async () => {
       try {
         const { data } = await axios.get(
-          "https://localhost:4000/api/v1/user/doctors",
+          "http://localhost:4000/api/v1/user/doctors",
           { withCredentials: true }
         );
         setDoctors(data.doctors);

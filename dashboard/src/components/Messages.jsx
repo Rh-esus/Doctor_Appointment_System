@@ -4,23 +4,25 @@ import axios from 'axios';
 import { Navigate } from 'react-router-dom';
 
 const Messages = () => {
-  const [messages,setMessages] =useState([]);
-  const [isAuthenticated]=useContext(Context);
+  const [messages, setMessages] = useState([]);
+  const [isAuthenticated] = useContext(Context);
 
   useEffect(() => {
-    const fetchMessages=async() => {
+    const fetchMessages = async () => {
       try {
-        const {data} = await axios.get("http://localhost:4000/api/v1/message/getall",{withCredentials:true});
+        const { data } = await axios.get("http://localhost:4000/api/v1/message/getall",
+          { withCredentials: true }
+        );
         setMessages(data.messages);
-      }catch(error) {
-        console.log("Error",error);
+      } catch (error) {
+        console.log(error.response.data.message);
       }
     };
     fetchMessages();
-  },[]);
+  }, []);
 
 
-  if(!isAuthenticated) {
+  if (!isAuthenticated) {
     return <Navigate to="/login" />
   }
 
@@ -30,9 +32,9 @@ const Messages = () => {
       <h1>Messages</h1>
       <div className="banner">
         {
-          messages && messages.length>0 ? (messages.map(element=>{
-            return(
-              <div className="card">
+          messages && messages.length > 0 ? (messages.map(element => {
+            return (
+              <div className="card" key={element._id}>
                 <div className="details">
                   <p>First Name :<span>{element.firstName}</span></p>
                   <p>Last Name :<span>{element.lastName}</span></p>
